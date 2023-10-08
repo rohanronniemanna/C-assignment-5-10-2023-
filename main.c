@@ -1,32 +1,20 @@
-
 #include <stdio.h>
-
-void printDiamond(int n) {
-    int space;
-    for (int i = 0; i < n; i++) {
-        for (space = 1; space <= n - i; space++)
-            printf(" ");
-        for (space = 0; space <= 2 * i; space++)
-            printf("* ");
-
-        printf("\n");
-    }
-
-    for (int i = n - 1; i > 0; i--) {
-        for (space = 0; space <= n - i; space++)
-            printf(" ");
-
-        for (space = 1; space < 2 * i; space++)
-            printf(" *");
-
-        printf("\n");
-    }
-}
-
-int main() {
-    int n;
-    printf("Enter the number of rows for the diamond pattern: ");
+#include <stdlib.h>
+int main()
+{
+    int n, r, sum = 0, temp;
+    printf("Enter the number: ");
     scanf("%d", &n);
-    printDiamond(n);
+    temp = n;
+    while (n > 0)
+    {
+        r = n % 10;
+        sum = (sum * 10) + r;
+        n = n / 10;
+    }
+    if (temp == sum)
+        printf("The number is a palindrome.");
+    else
+        printf("The number is not a palindrome.");
     return 0;
 }
