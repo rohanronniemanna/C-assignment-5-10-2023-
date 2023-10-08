@@ -1,17 +1,15 @@
-
 #include <stdio.h>
-void print_hello_world(int n) {
-    if (n == -1) {
-        return;
-    }
-    printf("Hello, World!\n");
-    print_hello_world( n- 1);
-}
-
-int main() {
-    int n;
-    printf("Enter the number of times to print Hello world : ");
+#include <stdlib.h>
+int main()
+{
+    int n, count = 0;
+    printf("Enter the number: ");
     scanf("%d", &n);
-    print_hello_world(n);
+    while (n > 0)
+    {
+        n = n / 10;
+        count++;
+    }
+    printf("The number of digits in the number is: %d", count);
     return 0;
 }
