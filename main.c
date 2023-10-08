@@ -1,17 +1,17 @@
-
 #include <stdio.h>
-void print_hello_world(int n) {
-    if (n == -1) {
-        return;
+#include <stdlib.h>
+int main()
+{
+    int a, b, hcf;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    for (int i = 1; i <= a && i <= b; i++)
+    {
+        if (a % i == 0 && b % i == 0)
+        {
+            hcf = i;
+        }
     }
-    printf("Hello, World!\n");
-    print_hello_world( n- 1);
-}
-
-int main() {
-    int n;
-    printf("Enter the number of times to print Hello world : ");
-    scanf("%d", &n);
-    print_hello_world(n);
+    printf("The highest common factor of %d and %d is %d", a, b, hcf);
     return 0;
 }
