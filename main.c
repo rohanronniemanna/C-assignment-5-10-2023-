@@ -1,17 +1,18 @@
-
 #include <stdio.h>
-void print_hello_world(int n) {
-    if (n == -1) {
-        return;
-    }
-    printf("Hello, World!\n");
-    print_hello_world( n- 1);
-}
-
-int main() {
-    int n;
-    printf("Enter the number of times to print Hello world : ");
+#include <stdlib.h>
+int main()
+{
+    int n, i, j, k;
+    printf("Enter the decimal number: ");
     scanf("%d", &n);
-    print_hello_world(n);
+    i = n;
+    j = 0;
+    while (i > 0)
+    {
+        k = i % 2;
+        j = j * 10 + k;
+        i = i / 2;
+    }
+    printf("The binary equivalent of %d is %d", n, j);
     return 0;
 }
